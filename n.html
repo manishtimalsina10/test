@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e6d5f7; /* Light Purple Background */
+            overflow: hidden; /* Prevent Scroll */
+        }
+
+        .container {
+            text-align: center;
+            background: #f4e9fd;
+            padding: 30px 40px;
+            border: 3px solid #c48cf0;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            width: 60%;
+        }
+
+        h1 {
+            color: #9c27b0;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            margin: 0 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .yes {
+            background-color: #c48cf0;
+            color: #fff;
+        }
+
+        .yes:hover {
+            background-color: #9c27b0;
+        }
+
+        .no {
+            background-color: #eaeaea;
+            color: #333;
+            position: absolute;
+        }
+
+        .no:hover {
+            background-color: #ff8787;
+            color: #fff;
+            transform: scale(1.2);
+        }
+
+        #love-message {
+            margin-top: 30px;
+            color: #6a1b9a;
+            font-size: 2rem;
+            display: none;
+        }
+
+        .image {
+            position: absolute;
+            bottom: 50px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .image img {
+            max-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>I Love You ❤️ Will you marry me? ❤️ </h1>
+        <div class="buttons">
+            <button class="btn yes" onclick="sayYes()">Yes</button>
+            <button class="btn no" id="no-button">No</button>
+        </div>
+        <p id="love-message">I love you too binita, my heart feels complete with you 💖 💖</p>
+    </div>
+
+    <!-- <div class="image">
+        <img src="https://i.imgur.com/1EwUtDh.png" alt="Heart Image">
+    </div> -->
+
+    <script>
+        const noButton = document.getElementById("no-button");
+
+        noButton.addEventListener("mouseover", () => {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            const randomX = Math.random() * (screenWidth - noButton.offsetWidth);
+            const randomY = Math.random() * (screenHeight - noButton.offsetHeight);
+
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        });
+
+        function sayYes() {
+            document.getElementById('love-message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
